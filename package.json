@@ -4,6 +4,7 @@
   "description": "guarda informacion de formularios creados y los lista ",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "dev": "nodemon src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
