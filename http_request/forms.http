@@ -1,0 +1,35 @@
+###
+GET http://localhost:7000/api/forms/form
+
+
+###
+POST http://localhost:7000/api/forms/form
+Content-Type: application/json
+
+{
+  "nombre": "Formulario de contacto",
+  "descripcion": "Formulario para que los usuarios se comuniquen con nosotros",
+  "id_usuario": "642f1a1c445b133ea6ead94c"
+}
+
+
+###
+GET http://localhost:7000/api/forms/form/6467a7d0ac2f9fb2d20c36a7
+
+
+###
+GET http://localhost:7000/api/forms/form-users/6466e2df66c05105ea5f908c
+
+
+###
+PUT http://localhost:7000/api/forms/form/645590bcd2dab9c8a7a2f3da
+Content-Type: application/json
+
+{
+  "nombre": "Formulario de contacto actualizado",
+  "descripcion": "Formulario para que los usuarios se comuniquen con nosotros. Actualizado"
+}
+
+
+###
+DELETE http://localhost:7000/api/forms/form/643f26689152a4a4261fd33e

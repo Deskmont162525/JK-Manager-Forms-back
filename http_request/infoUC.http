@@ -1,0 +1,13 @@
+###
+POST http://localhost:7000/api/info_2/infoUC
+Content-Type: application/json
+
+{
+  "id_usuario": "K20983",
+  "telefono": "1234567890",
+  "cantidad_hijos": "1",
+  "ciudad_residencia": "Bogotá",
+  "direccion_residencia": "Calle 123 # 45-67",
+  "estrato": "2",
+  "tipo_vivienda": "Apartamento"
+}

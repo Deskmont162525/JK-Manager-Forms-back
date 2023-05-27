@@ -1,0 +1,14 @@
+
+### all
+GET http://localhost:7000/api/info_admins/datos-super-admin
+
+### all
+GET http://localhost:7000/api/info_admins/datos-admin
+
+
+### por id
+GET http://localhost:7000/api/info_admins/datos-admin/KJb848cb35-781c-4c38-a5c4-e9f0d4e39974
+
+### por id form
+GET http://localhost:7000/api/info_admins/datos-admin-form/6467a7d0ac2f9fb2d20c36a7
+

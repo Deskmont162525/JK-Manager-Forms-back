@@ -1,0 +1,18 @@
+###
+POST http://localhost:7000/api/info_4/infoDGFB
+Content-Type: application/json
+
+{
+"id_usuario": "K20983",
+"familiares": [
+{
+"nombre": "pepita perez",
+"cedula": "3455222",
+"parente": "mama",
+"porcent": "100"
+}
+],
+"valor_ahorro": "89000",
+"periodo_nomina": "mes",
+"termino_condiciones": "true"
+}

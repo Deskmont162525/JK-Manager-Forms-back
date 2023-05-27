@@ -1,0 +1,54 @@
+###
+POST http://localhost:7000/api/users/user
+Content-Type: application/json
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZFVzZXIiOiI2NDU0NTQxYzcyNWJkNDBkYmMwYTRjNDgiLCJjb3JyZW8iOiJqdWFuMTIzQGV4YW1wbGUuY29tIiwidXNlcm5hbWUiOiJqdWFuMTIzIiwiZXN0YWRvIjp0cnVlLCJwYWdvIjpmYWxzZSwidGlwb19wYWdvIjoibWVzIiwidGlwb191c3VhcmlvIjpbIkFkbWluIl0sInBlcm1pc29zIjpbIk1vZHVsb3MgQWRtaW4iXSwiaWF0IjoxNjgzMzEyNDU4LCJleHAiOjE2ODMzMTYwNTh9.UE1j3gzOjHNcEt2sFbboCBwzEGzKBwjFPPh30806Vlc
+#eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MmYxYTFjNDQ1YjEzM2VhNmVhZDk0YyIsImlhdCI6MTY4MDgxMDAxOX0.iriajt81Px7TsvIdd66DMSlyouLL1CCzrUOtAuwXIKI
+
+{
+  "username": "deskmont16",
+  "correo": "deskmont16@outlook.es",
+  "password": "JKmanager16*",
+  "tipo_pago": "año",
+  "tipo_usuario": "SuperAdmin",
+  "permisos": ["Modulos SuperAdmin"]
+}
+
+# {
+#   "username": "otro yo 2",
+#   "correo": "dreyco@gmail.com",
+#   "password": "123",
+#   "tipo_pago": "mes",
+#   "tipo_usuario": "Cliente",
+#   "permisos": ["Modulos Cliente"]
+# }
+
+
+
+### 
+GET http://localhost:7000/api/users/user
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZFVzZXIiOiI2NDU1OGYzOGQyZGFiOWM4YTdhMmYzZDciLCJjb3JyZW8iOiJqdWFuMTIzQGV4YW1wbGUuY29tIiwidXNlcm5hbWUiOiJqdWFuMTIzIiwiZXN0YWRvIjp0cnVlLCJwYWdvIjpmYWxzZSwidGlwb19wYWdvIjoic2VtZXN0cmUiLCJ0aXBvX3VzdWFyaW8iOiJDbGllbnRlIiwicGVybWlzb3MiOlsiTW9kdWxvcyBDbGllbnRlIl0sImlhdCI6MTY4NDQ0OTE2OCwiZXhwIjoxNjg0NDUyNzY4fQ.gnoXzi8aHvDo5gf1mn-gozIJAU0xHKyLAeCEs6gwHBE
+#eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MmYxYTFjNDQ1YjEzM2VhNmVhZDk0YyIsImlhdCI6MTY4MDgxMDAxOX0.iriajt81Px7TsvIdd66DMSlyouLL1CCzrUOtAuwXIKI
+
+###
+GET http://localhost:7000/api/users/user/64558c57d2dab9c8a7a2f3c
+
+###
+PUT http://localhost:7000/api/users/user/987987
+Content-Type: application/json
+
+{
+  "username": "nuevoEjemplo",
+  "correo": "nuevoEjemplo@gmail.com",
+  "password": "nuevaContraseña",
+  "estado": true,
+  "pago": true,
+  "tipo_pago": "semestre"
+}
+
+###
+GET http://localhost:7000/api/users/user-active/Cliente
+
+###
+DELETE http://localhost:7000/api/users/user/77986
+
+

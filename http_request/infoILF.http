@@ -1,0 +1,18 @@
+###
+POST http://localhost:7000/api/info_3/infoILF
+Content-Type: application/json
+
+{
+  "id_usuario": "K20983",
+  "trans_moneda_e": "texto",
+  "detalle_trans_moneda_e": "texto",
+  "empresa_usuario": "texto",
+  "empresa_contratante": "texto",
+  "cargo": "texto",
+  "salario_basico": 4500000,
+  "otros_ingresos": 150000,
+  "recusos_publicos": false,
+  "banco": "texto",
+  "tipo_cuenta": "texto",
+  "num_cuenta": "texto"
+}

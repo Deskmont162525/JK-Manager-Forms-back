@@ -1,0 +1,16 @@
+###
+POST http://localhost:7000/api/auth/login
+Content-Type: application/json
+
+{
+  "correo": "juan123@example.com",
+  "password": "123"
+}
+
+###
+
+POST http://localhost:7000/api/auth/logout
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZFVzZXIiOiI2NDU0NTQxYzcyNWJkNDBkYmMwYTRjNDgiLCJjb3JyZW8iOiJqdWFuMTIzQGV4YW1wbGUuY29tIiwidXNlcm5hbWUiOiJqdWFuMTIzIiwiZXN0YWRvIjp0cnVlLCJwYWdvIjpmYWxzZSwidGlwb19wYWdvIjoibWVzIiwidGlwb191c3VhcmlvIjpbIkFkbWluIl0sInBlcm1pc29zIjpbIk1vZHVsb3MgQWRtaW4iXSwiaWF0IjoxNjgzMzExODQ2LCJleHAiOjE2ODMzMTU0NDZ9.VNrVZ4bGFwNU49cGJf1P9RMLXnAmuFQPZKyLEuXGimU
+Content-Type: application/json
+
+{}

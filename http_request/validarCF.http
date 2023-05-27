@@ -1,0 +1,7 @@
+POST http://localhost:7000/api/validarCodeForm/validar
+Content-Type: application/json
+codigo-autorizacion: $2a$10$VKysE8WMzdBajAm1pWpUDu.8j6C9Xt9CyChKa0LilF0nQPItoVkIK
+ 
+{
+  "id": "643f26689152a4a4261fd33e"
+}

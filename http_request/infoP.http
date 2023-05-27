@@ -1,0 +1,21 @@
+### 
+POST http://localhost:7000/api/info_1/infoP
+Content-Type: application/json
+codigo-autorizacion: 
+#$2a$10$VKysE8WMzdBajAm1pWpUDu.8j6C9Xt9CyChKa0LilF0nQPItoVkIK
+
+{
+  "id_usuario":"K20983",
+  "ciudad": "Bogotoo",
+  "fecha_diligencia": "2022-04-06",
+  "nombres": "antonio",
+  "apellidos": "foronda",
+  "tipo_documento": "CC",
+  "numero_documento": "1234567890",
+  "fecha_expedi_docu": "2020-01-01",
+  "ciudad_expedi_docu": "Bogotá",
+  "fecha_naci": "1990-01-01",
+  "estado_civil": "union libre",
+  "email": "ejemplo@correo.com",
+  "profecion_ocupacion": "Ingeniero de software"
+}
