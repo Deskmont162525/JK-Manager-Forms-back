@@ -28,6 +28,7 @@
     "nodemailer": "^6.9.2"
   },
   "devDependencies": {
+    "bcryptjs": "^2.4.3",
     "dotenv": "^16.0.3"
   }
 }
