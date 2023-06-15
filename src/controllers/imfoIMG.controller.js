@@ -14,18 +14,47 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-async function crearInfoImage(req, res) {
+// async function crearInfoImage(req, res) {
+//   try {
+//     const { id_usuario } = req.params;
+//     console.log("llama la funcion y tre ",req.file);
+//     if (req.file) {
+//       const result = await uploadImage(
+//         req.file.tempFilePath,
+//         id_usuario
+//       );
+
+//       await fs.unlink(req.file.tempFilePath);
+    
+//       res.status(200).json({
+//         mensaje: "Información de imagen creada exitosamente",
+//         code: 200,
+//         result: result,
+//       });
+//     } else {
+//       res.status(400).json({
+//         mensaje: "No se encontró ninguna imagen adjunta",
+//       });
+//     }
+//   } catch (error) {
+//     console.error(error);
+//     res.status(500).json({
+//       mensaje: "No se pudo crear la información de la imagen",
+//       error: error.message,
+//     });
+//   }
+// }
+
+const crearInfoImage = async (req, res) => {
   try {
     const { id_usuario } = req.params;
-console.log("llama la funcion y tre ",req.files);
-    if (req.files) {
+    if (req.file) {
       const result = await uploadImage(
-        req.files.tempFilePath,
+        req.file.path,
         id_usuario
       );
-
-      await fs.unlink(req.files.tempFilePath);
-
+      // console.log("result", result);
+      await fs.unlink(req.file.path);
       res.status(200).json({
         mensaje: "Información de imagen creada exitosamente",
         code: 200,
@@ -43,7 +72,7 @@ console.log("llama la funcion y tre ",req.files);
       error: error.message,
     });
   }
-}
+};
 
 async function crearInfoImages(req, res) {
   try {

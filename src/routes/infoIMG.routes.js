@@ -37,15 +37,5 @@ router.use(
   crearInfoImages
 );
 
-// router.use(
-//     "/info-images/:id_usuario",
-//     fileUpload({
-//       useTempFiles: true,
-//       tempFileDir: "./uploads",
-//     }),
-//     crearInfoImage
-//   );
-
-  router.post('/info-images/:id_usuario', multerUpload.single('image'), crearInfoImage);
-
+router.post('/info-images/:id_usuario', multerUpload.single('image'), crearInfoImage);
 module.exports = router;
