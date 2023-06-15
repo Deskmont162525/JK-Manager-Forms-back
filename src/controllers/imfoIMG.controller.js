@@ -17,14 +17,14 @@ cloudinary.config({
 async function crearInfoImage(req, res) {
   try {
     const { id_usuario } = req.params;
-
-    if (req.files?.image) {
+console.log("llama la funcion y tre ",req.files);
+    if (req.files) {
       const result = await uploadImage(
-        req.files.image.tempFilePath,
+        req.files.tempFilePath,
         id_usuario
       );
 
-      await fs.unlink(req.files.image.tempFilePath);
+      await fs.unlink(req.files.tempFilePath);
 
       res.status(200).json({
         mensaje: "Información de imagen creada exitosamente",
