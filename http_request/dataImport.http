@@ -1,0 +1,8 @@
+### llamar cargar archivo
+POST http://localhost:7000/api/data_importar/archivo
+Content-Type: multipart/form-data
+
+
+###
+GET http://localhost:7000/api/data_importar/data-usuario/985763771
+
