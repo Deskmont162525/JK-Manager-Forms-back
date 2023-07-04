@@ -75,11 +75,12 @@ const crearInfoImage = async (req, res) => {
 };
 
 async function crearInfoImages(req, res) {
+  
   try {
     const { id_usuario } = req.params;
     const { id_formulario, image, image1, image2 } = req.body;
     const existeInfoImages = await InfoImages.findOne({ id_usuario });
-
+    // console.log("llama la funcion id_usuario", id_usuario);
     if (existeInfoImages) {
       existeInfoImages.url_image_cel_uno = image;
       existeInfoImages.url_image_cel_dos = image1;
