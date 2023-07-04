@@ -7,9 +7,10 @@ POST http://localhost:7000/api/forms/form
 Content-Type: application/json
 
 {
-  "nombre": "Formulario de contacto",
+  "nombre": "Formulario de contacto prueba",
   "descripcion": "Formulario para que los usuarios se comuniquen con nosotros",
-  "id_usuario": "642f1a1c445b133ea6ead94c"
+  "nameForm": "formIFV2",
+  "id_usuario": "6466e2df66c05105ea5f908c"
 }
 
 

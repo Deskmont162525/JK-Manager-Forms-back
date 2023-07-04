@@ -1,0 +1,50 @@
+### Crear un nuevo formulario ###
+POST http://localhost:7000/api/solicitar/formulario
+Content-Type: application/json
+
+{
+  "nombreFormulario": "Formulario de prueba",
+  "descripcionFormulario": "Descripción del formulario de prueba",
+  "camposRequeridos": [
+    {
+      "label": "Nombre",
+      "tipo": "text"
+    },
+    {
+      "label": "Correo electrónico",
+      "tipo": "email"
+    }
+  ],
+  "id_usuario": "6466e2df66c05105ea5f908c",
+  "archivosAdjuntos": []
+}
+
+### Obtener todos los formularios ###
+GET http://localhost:7000/api/solicitar/formularios
+
+### Obtener un formulario por su ID ###
+GET http://localhost:7000/api/solicitar/formulario/649
+
+### Actualizar un formulario ###
+PUT http://localhost:7000/api/solicitar/formulario/6
+Content-Type: application/json
+
+{
+  "nombreFormulario": "Formulario actualizado",
+  "descripcionFormulario": "Descripción actualizada",
+  "camposRequeridos": [
+    {
+      "label": "Nombre completo",
+      "tipo": "text"
+    },
+    {
+      "label": "Teléfono",
+      "tipo": "tel"
+    }
+  ],
+  "id_usuario": "6466e2df66c05105ea5f908c",
+  "archivosAdjuntos": []
+}
+
+### Eliminar un formulario ###
+DELETE http://localhost:7000/api/solicitar/formulario/649

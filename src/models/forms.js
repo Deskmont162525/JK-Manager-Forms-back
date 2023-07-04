@@ -4,6 +4,7 @@ const formularioSchema = new mongoose.Schema({
   nombre: { type: String, required: true },
   descripcion: { type: String, required: true },
   id_usuario: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+  nameForm:{ type: String, required: true },
   estado: {
     type: Boolean,
     default: true,

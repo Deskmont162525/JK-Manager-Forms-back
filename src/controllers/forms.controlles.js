@@ -4,11 +4,11 @@ const InfoP = require("../models/infoP.model");
 
 const crearFormulario = async (req, res) => {
   try {
-    const { id_usuario, nombre, descripcion } = req.body;
+    const { id_usuario, nombre, descripcion, nameForm } = req.body;
     if (!id_usuario) {
       return res.status(200).json({ mensaje: "El campo id_usuario es obligatorio", code: 400 });
     }
-    const nuevoFormulario = new Formulario({ id_usuario, nombre, descripcion });
+    const nuevoFormulario = new Formulario({ id_usuario, nombre, descripcion, nameForm });
     await nuevoFormulario.save();
     res.status(201).json({ mensaje: "Formulario creado exitosamente", code: 201 });
   } catch (error) {

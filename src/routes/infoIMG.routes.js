@@ -23,19 +23,8 @@ const multerUpload = multer({
 });
 
 const {
-  crearInfoImages,
   crearInfoImage,
 } = require("../controllers/imfoIMG.controller");
-const fileUpload = require("express-fileupload");
-
-router.use(
-  "/infoIMG/:id_usuario",
-  fileUpload({
-    useTempFiles: true,
-    tempFileDir: "./uploads",
-  }),
-  crearInfoImages
-);
 
 router.post('/info-images/:id_usuario', multerUpload.single('image'), crearInfoImage);
 module.exports = router;

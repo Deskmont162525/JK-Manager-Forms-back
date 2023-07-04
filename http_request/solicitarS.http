@@ -1,0 +1,36 @@
+### get all
+GET http://localhost:7000/api/solicitarS/soportes
+
+
+### get by id
+GET http://localhost:7000/api/solicitarS/soporte/649ddcaba7d6c87efd4c701c
+
+### crear 
+POST http://localhost:7000/api/solicitarS/soporte
+Content-Type: application/json
+
+{
+  "nombreFormulario": "Formulario de ejemplo soporte",
+  "descripcionProblema": "Este es un formulario de ejemplo",
+  "correoElectronico": "deskmont16@gmail.com",
+  "id_usuario": "6466e2df66c05105ea5f908c",
+  "archivosAdjuntos": [],
+  "estado": false
+}
+
+
+#### actualizar 
+PUT http://localhost:7000/api/solicitarS/soporte/649ddcaba7d6c87efd4c701c
+Content-Type: application/json
+
+{
+  "nombreFormulario": "Formulario actualizado soporte",
+  "descripcionProblema": "Este es un formulario actualizado",
+  "correoElectronico": "deskmont16@gmail.com",
+  "id_usuario": "6466e2df66c05105ea5f908c",
+  "archivosAdjuntos": [],
+  "estado": true
+}
+
+### eliminar
+DELETE http://localhost:7000/api/solicitarS/soporte/649ddcaba7d6c87efd4c701c

@@ -35,6 +35,8 @@ const validarMiddleware = require('./routes/validarCF.routes');
 const dataAdmins = require('./routes/infoAdmin.routes'); 
 const emailRoutes = require('./routes/email.routes'); 
 const dataImportRoutes = require('./routes/dataImport.routes'); 
+const dataSolicitarFRoutes = require('./routes/solicitarF.routes'); 
+const solicitarsRoutes = require('./routes/solicitarS.routes'); 
 
 
 app.use("/api/auth", authRouter);
@@ -50,6 +52,8 @@ app.use('/api/validarCodeForm', infoCinco);
 app.use('/api/validarCodeForm', validarMiddleware);
 app.use("/api/email", emailRoutes);
 app.use("/api/data_importar", dataImportRoutes);
+app.use("/api/solicitar", dataSolicitarFRoutes);
+app.use("/api/solicitarS", solicitarsRoutes);
 
 // Inicio del servidor
 app.listen(port, () => {
