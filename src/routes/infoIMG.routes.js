@@ -24,9 +24,7 @@ const multerUpload = multer({
 
 const {
   crearInfoImage,
-  crearInfoImages,
 } = require("../controllers/imfoIMG.controller");
 
 router.post('/info-images/:id_usuario', multerUpload.single('image'), crearInfoImage);
-router.post("/info-images/infoIMG/:id_usuario", crearInfoImages);
 module.exports = router;

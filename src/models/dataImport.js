@@ -11,7 +11,8 @@ const DataImportSchema = new mongoose.Schema({
   cuotas: { type: Number, required: true },
   cuota_siguiente: { type: Number, required: true },
   fecha_1_cuota: { type: Date, required: true },
-  pagaduria: { type: String, required: true }
+  pagaduria: { type: String, required: true },
+  valor_cuota: { type: Number, required: true }
 });
 
 

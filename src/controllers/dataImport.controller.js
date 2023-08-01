@@ -88,6 +88,7 @@ exports.cargarArchivo = async (req, res) => {
       "CUOTA SIGUIENTE",
       "FECHA 1 CUOTA",
       "PAGADURIA",
+      "VALOR CUOTA",
     ];
 
     // Verificar si todas las columnas requeridas están presentes
@@ -96,14 +97,12 @@ exports.cargarArchivo = async (req, res) => {
     );
     if (columnasFaltantes.length > 0) {
       fs.unlinkSync(filePath);
-      return res
-        .status(200)
-        .json({
-          mensaje: `El archivo seleccionado no tiene el formato correcto o no tiene las siguientes columnas que son obligatorias: ${columnasFaltantes.join(
-            ", "
-          )}`,
-          code: 400,
-        });
+      return res.status(200).json({
+        mensaje: `El archivo seleccionado no tiene el formato correcto o no tiene las siguientes columnas que son obligatorias: ${columnasFaltantes.join(
+          ", "
+        )}`,
+        code: 400,
+      });
     }
 
     // Iterar sobre cada fila de datos (excepto la primera fila de encabezados)
@@ -123,10 +122,13 @@ exports.cargarArchivo = async (req, res) => {
       const fecha1 = fechaOrigenExcel1.add(fechaExcel1, "days").toDate();
       const fecha2 = fechaOrigenExcel2.add(fechaExcel2, "days").toDate();
 
+      const valorCuota = parseInt(row[12]);
+      const valorCuotaAsNumber = !isNaN(valorCuota) ? valorCuota : 0;
+
       // console.log("prueba", fecha1, fecha2);
       // Crear un objeto de título con los valores de cada columna
       const dataImport = new DataImport({
-        identificacion: row[0],
+        identificacion: row[0].split(' ').join(''),
         asociado: row[1],
         linea_concepto: row[2],
         fecha_pago: moment(fecha1).toDate(),
@@ -136,11 +138,11 @@ exports.cargarArchivo = async (req, res) => {
         cuotas: parseInt(row[7]),
         cuota_siguiente: parseInt(row[8]),
         fecha_1_cuota: moment(fecha2).toDate(),
-        pagaduria: row[10],
-      });  
+        pagaduria: row[11].split(' ').join(''),
+        valor_cuota: valorCuotaAsNumber,
+      });
 
       await dataImport.save();
-      
     }
 
     // Eliminar el archivo temporal
@@ -152,16 +154,13 @@ exports.cargarArchivo = async (req, res) => {
   } catch (error) {
     console.error(error);
     fs.unlinkSync(filePath);
-    res
-      .status(500)
-      .json({
-        mensaje: "Error al cargar el archivo",
-        code: 500,
-        error: error.message,
-      });
+    res.status(500).json({
+      mensaje: "Error al cargar el archivo",
+      code: 500,
+      error: error.message,
+    });
   }
 };
-
 
 exports.getAllDataById = async (req, res) => {
   const { id } = req.params;
@@ -183,7 +182,9 @@ exports.getAllDataById = async (req, res) => {
     }
 
     // Filtrar la información de los usuarios por el mes actual
-    const informacionMesActual = users.filter(user => moment(user.fecha_pago).month() === mesActual);
+    const informacionMesActual = users.filter(
+      (user) => moment(user.fecha_pago).month() === mesActual
+    );
 
     // console.log("llamo la funcion y lleva ", informacionMesActual);
     // Enviar la información de los usuarios filtrada por el mes actual en la respuesta
@@ -197,8 +198,3 @@ exports.getAllDataById = async (req, res) => {
     res.status(500).json({ mensaje: "Error interno del servidor", code: 500 });
   }
 };
-
-
-
-
-
