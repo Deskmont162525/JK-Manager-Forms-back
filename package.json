@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "guarda informacion de formularios creados y los lista ",
   "main": "index.js",
+  "engines": {
+    "node": "18.15.0"
+  },
   "scripts": {
     "start": "node src/index.js",
     "dev": "node src/index.js",
