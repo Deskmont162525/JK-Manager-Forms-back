@@ -38,9 +38,6 @@ const dataImportRoutes = require('./src/routes/dataImport.routes');
 const dataSolicitarFRoutes = require('./src/routes/solicitarF.routes'); 
 const solicitarsRoutes = require('./src/routes/solicitarS.routes'); 
 
-app.use("/", (req,res) => {
-  res.send("Inicio del aplicativo OK");
-});
 app.use("/api/auth", authRouter);
 app.use('/api/users', userRoutes);
 app.use('/api/forms', formsRoutes);
