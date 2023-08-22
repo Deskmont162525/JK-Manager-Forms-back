@@ -23,20 +23,20 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
 // Definición de las rutas de la API
-const authRouter = require("./src/routes/auth.routes");
-const userRoutes = require('./src/routes/users.routes');
-const infoUno = require('./src/routes/infoP.routes'); 
-const infoDos = require('./src/routes/infoUC.routes'); 
-const infoTres = require('./src/routes/infoILF.routes'); 
-const infoCuatro = require('./src/routes/infoDGFB.routes'); 
-const infoCinco = require('./src/routes/infoIMG.routes'); 
-const formsRoutes = require('./src/routes/forms.routes'); 
-const validarMiddleware = require('./src/routes/validarCF.routes'); 
-const dataAdmins = require('./src/routes/infoAdmin.routes'); 
-const emailRoutes = require('./src/routes/email.routes'); 
-const dataImportRoutes = require('./src/routes/dataImport.routes'); 
-const dataSolicitarFRoutes = require('./src/routes/solicitarF.routes'); 
-const solicitarsRoutes = require('./src/routes/solicitarS.routes'); 
+const authRouter = require("./routes/auth.routes");
+const userRoutes = require('./routes/users.routes');
+const infoUno = require('./routes/infoP.routes'); 
+const infoDos = require('./routes/infoUC.routes'); 
+const infoTres = require('./routes/infoILF.routes'); 
+const infoCuatro = require('./routes/infoDGFB.routes'); 
+const infoCinco = require('./routes/infoIMG.routes'); 
+const formsRoutes = require('./routes/forms.routes'); 
+const validarMiddleware = require('./routes/validarCF.routes'); 
+const dataAdmins = require('./routes/infoAdmin.routes'); 
+const emailRoutes = require('./routes/email.routes'); 
+const dataImportRoutes = require('./routes/dataImport.routes'); 
+const dataSolicitarFRoutes = require('./routes/solicitarF.routes'); 
+const solicitarsRoutes = require('./routes/solicitarS.routes'); 
 
 app.use("/api/auth", authRouter);
 app.use('/api/users', userRoutes);
