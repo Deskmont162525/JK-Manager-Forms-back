@@ -23,8 +23,10 @@ const multerUpload = multer({
 });
 
 const {
-  crearInfoImage,
+  crearInfoImage, crearInfoImages,
 } = require("../controllers/imfoIMG.controller");
 
 router.post('/info-images/:id_usuario', multerUpload.single('image'), crearInfoImage);
+// guarda la info de las imagenes en la tabla
+router.post('/info-images/infoIMG/:id_usuario', crearInfoImages);
 module.exports = router;
